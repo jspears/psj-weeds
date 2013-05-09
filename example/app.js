@@ -14,8 +14,8 @@ app.get('/index', function (req, res) {
         title: 'Dandelion Demo App',
         requestScope: {
             people: [
-                {id: 1, firstName: 'Joe', lastName:'Jones', address:{town:{'Hobokin'}}, description: 'Nice Guy'},
-                {id: 2, firstName: 'Bob', lastNames:'Roberts',address:{town:{'Hobokin'}}, description: 'really great dude!'}
+                {id: 1, firstName: 'Joe', lastName: 'Jones', address: {town: 'Hobokin'}, description: 'Nice Guy'},
+                {id: 2, firstName: 'Bob', lastNames: 'Roberts', address: {town: 'Hobokin'}, description: 'really great dude!'}
             ]
         }
     });
