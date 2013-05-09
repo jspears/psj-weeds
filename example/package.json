@@ -1,0 +1,15 @@
+{
+    "name": "psj-dandelion-example",
+    "description": "Example Dandelion JSP tags in PSJ",
+    "version":"0.0.1",
+    "dependencies": {
+        "express": "latest"
+    },
+    "jam": {
+        "baseUrl":"public",
+        "packageDir": "public/jam",
+        "dependencies": {
+	        "psj-dandelion":"linked"
+        }
+    }
+}

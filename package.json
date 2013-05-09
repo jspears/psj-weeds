@@ -1,0 +1,11 @@
+{
+    "name": "psj-dandelion",
+    "description": "Dandelion JSP tags in PSJ",
+    "version":"0.0.1",
+    "dependencies": {
+        "psj": "linked"
+    },
+    "jam": {
+        "main": "index.js"
+    }
+}
