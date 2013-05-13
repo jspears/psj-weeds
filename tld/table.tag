@@ -1,5 +1,6 @@
 <%--Generate a HTML table thanks to the awesome
            DataTables jQuery plugin.--%>
+<%@taglib prefix="c" uri='http://java.sun.com/jsp/jstl/core'%>
 <%@attribute rtexprvalue="true" required="true" name="id" description="(required) DOM id of the HTML table." %>
 <%@attribute type="java.lang.Object" rtexprvalue="true" name="data" description="Collection of data used to populate the table.               (Either data or url attribute is required)" %>
 <%@attribute rtexprvalue="true" name="url" description="Web service URL used to populate the table.               (Either data or url attribute is required)" %>
@@ -44,10 +45,30 @@
 <%@attribute name="scrollY" description="Table's height to display in scrolling mode.             (default : 300px)" %>
 <%@attribute name="scrollCollapse" description=" (true|false) When vertical (y) scrolling is enabled,           	DataTables will force the height of the table's viewport to the           	given height at all times (useful for layout). However, this can           	look odd when filtering data down to a small data set, and           	the footer is left "floating" further down. This parameter           	(when enabled) will cause DataTables to collapse the table's           	viewport down when the result set will fit within the given           	Y height. (default : false)" %>
 <%@attribute name="colReorder" description="(true|false) Enable or disable the DataTables             ColReorder plugin. (Default : false) (See :             http://datatables.net/extras/colreorder/)" %>
-<table>
+<%@variable name="columns"%>
+    <%
+    debugger;
+    %>
+    <c:set var="items" value="${data}"/>
+    <table>
     <thead><tr><jsp:doBody/></tr></thead>
-    <tbody></tbody>
+    <tbody>
+    <%
+    var columns = this.scope.columns.columns
+    _.each(pageScope.items, function(d, i){
+        %>
+        <tr>
+    <%
+        _.each(columns, function(c,ci){
+    %>
+        <td><%=d[c.property]%></td>
+    <%
+        });
+    %>
+    </tr>
+    <%
+    });
+    %>
+
+    </tbody>
 </table>
-        <%
-            console.log('please implement: "http://github.com/dandelion/datatables:table"');
-            %>

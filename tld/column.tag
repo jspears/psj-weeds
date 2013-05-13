@@ -20,6 +20,9 @@
 <%@attribute name="renderFunction" description="Name of an external Javascript function that will be used to render the column (AJAX only)" %>
 <%@attribute rtexprvalue="true" name="format" description="A MessageFormat pattern that will be used to format the property. (DOM only)" %>
 <%
-            console.log('please implement: "http://github.com/dandelion/datatables:column"');
+
+var cols = this.scope.columns.columns || (this.scope.columns.columns = []);
+
+cols.push(this._attrs);
 %>
 <th><%= title %></th>
